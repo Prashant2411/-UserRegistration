@@ -20,7 +20,7 @@ public class UserRegistration {
     }
 
     public boolean isValidPassword(String password) {
-        String regexPattern = "^[a-zA-Z0-9!@#$%^&*()_]{8,}$";
+        String regexPattern = "^[a-z0-9]*[A-Z]+[a-z0-9]*$";
         return password.matches(regexPattern);
     }
 }
