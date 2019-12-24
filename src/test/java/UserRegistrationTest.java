@@ -30,4 +30,18 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.isValid("Br");
         Assert.assertEquals(false, valid);
     }
+
+    @Test
+    public void whenGivenLastName_ifFirstLetterCapital_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean valid = userRegistration.isValid("Wayne");
+        Assert.assertEquals(true, valid);
+    }
+
+    @Test
+    public void whenGivenLastName_ifFirstLetterSmall_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean valid = userRegistration.isValid("wayne");
+        Assert.assertEquals(false, valid);
+    }
 }
