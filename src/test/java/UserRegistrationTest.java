@@ -62,4 +62,15 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assert.assertFalse(userRegistration.isValidEmail("abc-abc.@gmail.com.com"));
     }
+
+    @Test
+    public void whenGivenMobileNumber_ifStartWithCountryCodeAnd10InLength_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertTrue(userRegistration.isValidMobile("+121 7283940583"));
+    }
+    @Test
+    public void whenGivenMobileNumber_ifNotStartWithCountryCodeOrNot10InLength_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidMobile("7283940583"));
+    }
 }

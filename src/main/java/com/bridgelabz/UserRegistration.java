@@ -13,4 +13,9 @@ public class UserRegistration {
         String regexPattern = "^[a-zA-Z0-9]+[.+_-]?[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}[.]?[a-zA-Z]{0,3}";
         return email.matches(regexPattern);
     }
+
+    public boolean isValidMobile(String mobileNumber) {
+        String regexPattern = "^[+]?[0-9]{1,3}[ ][7-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}";
+        return mobileNumber.matches(regexPattern);
+    }
 }
