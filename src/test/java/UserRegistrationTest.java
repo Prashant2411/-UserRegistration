@@ -44,4 +44,18 @@ public class UserRegistrationTest {
         boolean valid = userRegistration.isValid("wayne");
         Assert.assertEquals(false, valid);
     }
+
+    @Test
+    public void whenGivenLastName_ifMoreThen3Character_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean valid = userRegistration.isValid("Wayne");
+        Assert.assertEquals(true, valid);
+    }
+
+    @Test
+    public void whenGivenLastName_ifLessThen3Character_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean valid = userRegistration.isValid("Wa");
+        Assert.assertEquals(false, valid);
+    }
 }
