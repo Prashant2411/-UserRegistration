@@ -78,7 +78,7 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_if8OrMoreInLength_shouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assert.assertTrue(userRegistration.isValidPassword("16PASasword"));
+        Assert.assertTrue(userRegistration.isValidPassword("16PASaswordas"));
     }
 
     @Test
