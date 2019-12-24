@@ -18,4 +18,9 @@ public class UserRegistration {
         String regexPattern = "^[+]?[0-9]{1,3}[ ][7-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}";
         return mobileNumber.matches(regexPattern);
     }
+
+    public boolean isValidPassword(String password) {
+        String regexPattern = "^[a-zA-Z0-9!@#$%^&*()_]{8,}$";
+        return password.matches(regexPattern);
+    }
 }

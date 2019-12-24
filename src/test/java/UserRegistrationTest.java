@@ -68,9 +68,22 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assert.assertTrue(userRegistration.isValidMobile("+121 7283940583"));
     }
+
     @Test
     public void whenGivenMobileNumber_ifNotStartWithCountryCodeOrNot10InLength_shouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         Assert.assertFalse(userRegistration.isValidMobile("7283940583"));
+    }
+
+    @Test
+    public void whenGivenPassword_if8OrMoreInLength_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertTrue(userRegistration.isValidPassword("password123@"));
+    }
+
+    @Test
+    public void whenGivenPassword_ifLessThen7InLength_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidPassword("pasword"));
     }
 }
