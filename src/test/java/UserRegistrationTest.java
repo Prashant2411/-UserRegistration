@@ -50,4 +50,16 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assert.assertFalse(userRegistration.isValidName("Wa"));
     }
+
+    @Test
+    public void whenGivenEmail_ifValid_shouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertTrue(userRegistration.isValidEmail("abc-abc@gmail.com.com"));
+    }
+
+    @Test
+    public void whenGivenEmail_ifInvalid_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidEmail("abc-abc.@gmail.com.com"));
+    }
 }
