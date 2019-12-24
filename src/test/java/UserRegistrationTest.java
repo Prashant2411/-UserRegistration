@@ -76,14 +76,32 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void whenGivenPassword_if8OrMoreInLength_shouldReturnTrue() {
+    public void whenGivenPassword_hasMoreThen8CharUpperCaseNumericKeySpecialChar_shouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assert.assertTrue(userRegistration.isValidPassword("16PASaswordas"));
+        Assert.assertTrue(userRegistration.isValidPassword("P455wORD123@"));
     }
 
     @Test
-    public void whenGivenPassword_ifLessThen7InLength_shouldReturnFalse() {
+    public void whenGivenPassword_isLessThen7Char_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidPassword("Pasword"));
+    }
+
+    @Test
+    public void whenGivenPassword_notHaveUpperCase_shouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         Assert.assertFalse(userRegistration.isValidPassword("pasword"));
+    }
+
+    @Test
+    public void whenGivenPassword_notHaveNumericKey_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidPassword("Pasword"));
+    }
+
+    @Test
+    public void whenGivenPassword_notHaveSpecialChar_shouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assert.assertFalse(userRegistration.isValidPassword("Pasword12"));
     }
 }
